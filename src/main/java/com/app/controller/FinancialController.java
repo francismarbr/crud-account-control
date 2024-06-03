@@ -24,7 +24,6 @@ public class FinancialController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	private FinancialService financialService = new FinancialService();
-	FinancialAccount account = new FinancialAccount();
 
     public FinancialController() {
         super();
@@ -72,7 +71,9 @@ public class FinancialController extends HttpServlet {
 		rd.forward(request, response);
 	}
 	
-	protected void add(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
+	protected void add(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
+		FinancialAccount account = new FinancialAccount();
+		
 		String valueForm = request.getParameter("value");
 		double value = Double.parseDouble(valueForm);
 		
@@ -97,6 +98,8 @@ public class FinancialController extends HttpServlet {
 	}
 	
 	protected void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
+		FinancialAccount account = new FinancialAccount();
+		
 		String valueForm = request.getParameter("value");
 		double value = Double.parseDouble(valueForm);
 		
@@ -129,7 +132,9 @@ public class FinancialController extends HttpServlet {
 		response.sendRedirect("financial");
 	}
 	
-	protected void select(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
+	protected void select(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		FinancialAccount account = new FinancialAccount();
+		
 		String idAccount = request.getParameter("id");	 
 
         try {
