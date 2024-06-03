@@ -92,8 +92,8 @@ public class FinancialController extends HttpServlet {
 		account.setValue(value);
 		
 		financialService.saveFinancialAccount(account);
-		
-		response.sendRedirect("account-list.jsp");
+				
+		response.sendRedirect("financial");
 	}
 	
 	protected void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
